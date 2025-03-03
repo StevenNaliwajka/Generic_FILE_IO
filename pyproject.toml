@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generic_file_io"
+version = "0.1.0"
+description = "A modular file I/O management library"
+authors = [{ name = "Steven Naliwajka", email = "Steven716@live.com" }]
+readme = "README.md"
+dependencies = []
+
+#[project.optional-dependencies]
+#csv = ["pandas"]    # Optional dependency for CSV
+#json = []           # No extra dependencies needed for JSON
+#env = []            # No extra dependencies needed for ENV
+#all = ["pandas"]    # Installs everything (add other dependencies if needed)
