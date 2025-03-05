@@ -12,4 +12,8 @@ requires-python = ">=3.6"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["generic_file_io*"]
+include = ['Codebase', 'Codebase.DataCollection', 'Codebase.Pathing', 'Codebase.Generic_VENV_Manger', 'Codebase.FileIO',
+    'Codebase.SupportMethods', 'Codebase.DataCollection.Brain', 'Codebase.DataCollection.Connection',
+    'Codebase.DataCollection.Data', 'Codebase.Generic_VENV_Manger.VENVCodeBase', 'Codebase.Generic_VENV_Manger.VENVSetup',
+    'Codebase.Generic_VENV_Manger.VENVCodeBase.VENVPathing', 'Codebase.Generic_VENV_Manger.VENVCodeBase.VENVReadJSON',
+    'Codebase.Generic_VENV_Manger.VENVCodeBase.VENVSupport', 'Codebase.FileIO.JSON', 'Codebase.FileIO.CSV']
