@@ -1,7 +1,9 @@
 import csv
 import shutil
-import os
 import sys
+
+from generic_file_io.core.generic_remove_file import generic_remove_file
+
 
 def clean_csv_file(file_to_modify: str, final_path: str, og_copy_path: str = '') -> None:
     try:
@@ -29,7 +31,7 @@ def clean_csv_file(file_to_modify: str, final_path: str, og_copy_path: str = '')
             print(f"Original file copied to: {og_copy_path}")
 
         # Delete the original file
-        os.remove(file_to_modify)
+        generic_remove_file(file_to_modify)
         print(f"Original file deleted: {file_to_modify}")
 
     except Exception as e:
