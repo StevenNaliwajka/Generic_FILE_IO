@@ -7,19 +7,26 @@ from generic_file_io.csv_manager.support.format_csv_entry import format_csv_entr
 def csv_append(file_path: str, dict_of_items: dict, prevent_duplicates: bool = False):
     """Appends a dictionary as a new row in a CSV file, optionally preventing duplicates."""
 
+    if not isinstance(dict_of_items, dict):
+        raise TypeError(f"Expected a dictionary, got {type(dict_of_items)}: {dict_of_items}")
+
     # Format the entry
-    new_entry = format_csv_entry(dict_of_items)
+    new_entry = format_csv_entry(dict_of_items) + "\n"  # Ensure newline at the end
 
     if prevent_duplicates:
-        # Read existing entries if the file exists
+        # chk existing entries if the file exists
         if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as file:
-                existing_entries = set(line.strip() for line in file)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    existing_entries = set(line.strip() for line in file if line.strip())
+            except Exception as e:
+                print(f"Warning: Could not read {file_path}. Assuming no existing entries. Error: {e}")
+                existing_entries = set()
 
-            # Check for duplicates
-            if new_entry in existing_entries:
+            # Check dupes
+            if new_entry.strip() in existing_entries:
                 print("Duplicate entry detected. Skipping append.")
                 return
 
-    # Append the new entry
+    # Append the new emtry
     generic_append_to_file(file_path, new_entry)
