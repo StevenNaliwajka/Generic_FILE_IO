@@ -10,8 +10,11 @@ authors = [{ name = "Steven Naliwajka", email = "Steven716@live.com" }]
 readme = "README.md"
 dependencies = []
 
-[tool.setuptools]
-packages = ["generic_file_io"]  # Ensure setuptools includes your package
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "generic_file_io*"
+]
 
 [project.urls]
 Homepage = "https://github.com/StevenNaliwajka/Generic_FILE_IO"
