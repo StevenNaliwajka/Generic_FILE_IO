@@ -12,9 +12,8 @@ dependencies = []
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = [
-    "generic_file_io*"
-]
+include = ["generic_file_io", "generic_file_io.*"]
+
 
 [project.urls]
 Homepage = "https://github.com/StevenNaliwajka/Generic_FILE_IO"
