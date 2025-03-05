@@ -4,12 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "generic_file_io"
-version = "0.1.0"
+version = "0.1.1"
 description = "A modular file I/O management library"
 authors = [{ name = "Steven Naliwajka", email = "Steven716@live.com" }]
 readme = "README.md"
 dependencies = []
 
+[tool.setuptools]
+packages = ["generic_file_io"]  # Ensure setuptools includes your package
+
+[project.urls]
+Homepage = "https://github.com/StevenNaliwajka/Generic_FILE_IO"
 #[project.optional-dependencies]
 #csv = ["pandas"]    # Optional dependency for CSV
 #json = []           # No extra dependencies needed for JSON
